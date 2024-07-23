@@ -1,8 +1,8 @@
-<h1>This is laravel tutorial by ram kumar</h1>
+<h1>Product page here </h1>
+<a href="/">Home</a>
 <br>
 <a href="{{route('post')}}">Post pages</a>
 <br>
 <a href="{{route('blog')}}">blog pages</a>
 <br>
-<a href="{{route('product')}}">Product pages</a>
-<br>
+

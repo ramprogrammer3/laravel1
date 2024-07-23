@@ -1,6 +1,6 @@
-<h1>This is laravel tutorial by ram kumar</h1>
+<h1>Post page here</h1>
 <br>
-<a href="{{route('post')}}">Post pages</a>
+<a href="/">Home</a>
 <br>
 <a href="{{route('blog')}}">blog pages</a>
 <br>
