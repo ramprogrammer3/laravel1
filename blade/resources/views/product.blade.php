@@ -10,3 +10,12 @@
 @section('title')
     product
 @endsection
+
+@prepend('style')
+    <style>
+        .content{
+            background: blue;
+            color: white;
+        }
+    </style>
+@endprepend

@@ -21,3 +21,7 @@ Route::get('/blog', function () {
 Route::get('/product', function () {
     return view('product');
 });
+
+Route::get('/text', function () {
+    return view('text');
+});

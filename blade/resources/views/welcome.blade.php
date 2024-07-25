@@ -1,14 +1,22 @@
 @extends('layouts.masterlayout')
 
-{{-- @section('content')
+@section('content')
 
     <div class="content">
         <h2>Home page </h2>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus deleniti perferendis ab a nisi, nihil numquam ipsam sequi voluptate! Voluptate ipsam iusto dolorum itaque quae. Rerum ut laudantium aspernatur.</p>
     </div>
     
-@endsection --}}
+@endsection
 
 @section('title')
     Home
 @endsection
+
+@push('scripts')
+    <script src="/example.js"></script>
+@endpush
+
+@push('style')
+    <link rel="stylesheet" href="bootstrap.css">
+@endpush

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>website @yield("title",'ramkumar') </title>
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    @stack('style')
 </head>
 <body>
     <div class="wrapper">
@@ -44,5 +45,7 @@
             ramkumar@copyright2024
         </footer>
     </div>
+
+    @stack('scripts')
 </body>
 </html>
