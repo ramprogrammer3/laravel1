@@ -1,10 +1,13 @@
-@include("pages.header")
+@extends('layouts.masterlayout')
 
-        <main class="clearfix">
-            <div class="content">
-                <h2>About page here</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nisi dicta illo voluptatem impedit libero, vitae distinctio repudiandae, odio inventore totam soluta ipsa quae sunt dolore qui sint incidunt. Explicabo in quasi fugit magni odit pariatur ullam! Obcaecati ad ea totam doloribus velit dolorum repellat distinctio quia minus mollitia nostrum neque iusto minima, veniam voluptatem illo temporibus fuga quo cum delectus vel dolor ut nisi. Soluta, dolor omnis nisi molestiae cupiditate sunt commodi laboriosam reprehenderit reiciendis qui quibusdam fugiat velit ad quam unde, nihil consectetur in nostrum architecto ut? Quidem id soluta exercitationem provident repellat, dolorem consectetur optio suscipit dolor? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat eum nulla itaque? Esse deserunt quod impedit debitis illum eaque accusantium.</p>
-            </div>
-            @include("pages.sidebar")
-        </main>
-@include("pages.footer")
+@section('content')
+    <div class="content">
+        <h3>About page </h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, suscipit quisquam! Aut quos culpa illum ad quasi omnis accusantium eos ipsa, dicta minima mollitia rerum velit rem eligendi autem inventore fugit veritatis harum maxime hic ullam officia distinctio tempore praesentium? Ut impedit placeat facere consectetur nihil laudantium. Aliquam laudantium, nulla quod aliquid pariatur obcaecati facere debitis nihil beatae commodi officia voluptatibus sunt! Illum quos ad a. Odit modi dolor earum.</p>
+    </div>
+@endsection
+
+
+@section('title')
+    about
+@endsection
