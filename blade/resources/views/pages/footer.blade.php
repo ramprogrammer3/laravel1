@@ -1,1 +1,6 @@
-<h1>Footer page here </h1>
+<footer>
+            ramkumar@copyright2024
+        </footer>
+    </div>
+</body>
+</html>
