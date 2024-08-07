@@ -16,3 +16,7 @@ Route::get("/post",function(){
     return view('post');
 });
 
+Route::get("/test/{id?}",function(string $id = null){
+    return "<h1>This is simple test route, Your id is $id </h1>";
+});
+
