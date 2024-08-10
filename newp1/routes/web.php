@@ -7,16 +7,31 @@ Route::get('/', function () {
 })->name("home");
 
 
-Route::get('/about', function () {
-    return view('about');
-})->name("myabout");
 
 
-Route::get("/post",function(){
-    return view('post');
-})->name("mypost");
+// Route::get("/pages/about",function(){
+//     return view("pages.about");
+// })->name("about");
 
-// Route::get("/test/{id?}",function(string $id = null){
-//     return "<h1>This is simple test route, Your id is $id </h1>";
-// })->name("test");
+// Route::get("/pages/contact",function(){
+//     return view("pages.contact");
+// })->name("contact");
 
+// Route::get("/pages/product",function(){
+//     return view("pages.product");
+// })->name("product");
+
+
+Route::prefix('pages')->group(function () {
+    Route::get("/about", function () {
+        return view("pages.about");
+    })->name("about");
+
+    Route::get("/contact", function () {
+        return view("pages.contact");
+    })->name("contact");
+
+    Route::get("/product", function () {
+        return view("pages.product");
+    })->name("product");
+});
