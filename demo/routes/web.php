@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\TestingController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -16,3 +17,5 @@ Route::controller(PageController::class)->group(function () {
     Route::get("/user", 'showUser')->name('users');
     Route::get("/blog", 'showBlog')->name('blog');
 });
+
+Route::get('/test',TestingController::class);
