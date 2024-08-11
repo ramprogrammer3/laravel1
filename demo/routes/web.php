@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get("/",[PageController::class,'showUser']);
+Route::get("/",[PageController::class,'showHome'])->name('home');
+Route::get("/user",[PageController::class,'showUser'])->name('users');
 
 
 
