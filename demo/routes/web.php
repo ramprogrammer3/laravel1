@@ -7,5 +7,6 @@ Route::get('/', function () {
 });
 
 Route::get('/users', function () {
-    return view('users',['user' => 'ram kumar']);
+    $name = "ram kumar maniyari";
+    return view('users',['user' => $name, "city" => "Sitamarhi"]);
 });
