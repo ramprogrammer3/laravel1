@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get("/",[PageController::class,'showHome'])->name('home');
-Route::get("/user",[PageController::class,'showUser'])->name('users');
+Route::get("/user/{id}",[PageController::class,'showUser'])->name('users');
 
 
 

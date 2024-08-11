@@ -11,8 +11,8 @@ class PageController extends Controller
         return view("welcome");
     }
 
-    public function showUser()
+    public function showUser(string $id)
     {
-        return view("user");
+        return view("user",['id' => $id]);
     }
 }
