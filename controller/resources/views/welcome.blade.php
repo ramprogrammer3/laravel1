@@ -1,1 +1,1 @@
-<h1>This is laravel controller tutorial</h1>
+<h1>This is laravel controller tutorialc</h1>
