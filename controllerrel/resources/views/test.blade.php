@@ -1,4 +1,0 @@
-<h1>This is test controller page here</h1>
-<div class="container">
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At tempore non cupiditate rem, est nisi numquam. Impedit dolore recusandae officia maiores, odio consequuntur ducimus in magnam? Ab assumenda minima autem. Commodi labore asperiores earum numquam non, harum voluptas ea delectus temporibus itaque doloremque fugit nam nemo quod nisi corrupti provident cum repellendus dolorem sunt magni repellat, velit, doloribus error? Doloremque maxime consequatur doloribus eaque. Consequatur consectetur alias necessitatibus assumenda omnis nesciunt ut possimus ullam ipsam harum quisquam hic animi, quaerat est molestias maiores non quia asperiores explicabo consequuntur sint debitis eius error at! Beatae ad, molestiae saepe repellendus quia quibusdam.</p>
-</div>

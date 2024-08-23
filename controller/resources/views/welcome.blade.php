@@ -1,0 +1,1 @@
+<h1>This is laravel controller tutorial</h1>
