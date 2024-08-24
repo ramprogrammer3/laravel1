@@ -19,4 +19,4 @@ Route::controller(PageController::class)->group(function(){
     Route::get("/product",'showProduct')->name("product");
 });
 
-Route::get("/test",TestController::class);
+Route::get("/test",TestController::class)->name("test");

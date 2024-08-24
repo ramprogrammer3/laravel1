@@ -16,6 +16,7 @@
                 <a href="{{route('user')}}">Go to user page </a><br>
                 <a href="{{route('product')}}">Go to Product </a><br>
                 <a href="{{route('blog')}}">Go to Blog </a><br>
+                <a href="{{route('test')}}">Go to test page </a>
             </div>
         </div>
     </div>
