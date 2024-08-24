@@ -13,6 +13,9 @@
             <div class="col">
                 <h3>This is laravel controller tutorial</h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, eum repellendus doloremque asperiores expedita sunt saepe omnis ea numquam, quas, nisi dolor harum laboriosam maiores. Reprehenderit quod nam iure ea voluptas hic veritatis magnam. Debitis quis aspernatur exercitationem explicabo, esse perspiciatis eum corporis alias adipisci praesentium quo! Quos, cumque possimus.</p>
+                <a href="{{route('user')}}">Go to user page </a><br>
+                <a href="{{route('product')}}">Go to Product </a><br>
+                <a href="{{route('blog')}}">Go to Blog </a><br>
             </div>
         </div>
     </div>

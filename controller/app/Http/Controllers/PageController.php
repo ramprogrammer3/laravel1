@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function showUser(string $id)
+    public function showUser()
     {
         // return "<h1>Welcome to controller tutorial</h1>";
-        return view("user",compact('id'));
+        return view("pages.user");
     }
 
     public function showHome(){
@@ -17,6 +17,10 @@ class PageController extends Controller
     }
 
     public function showBlog(){
-        return view("blog");
+        return view("pages.blog");
+    }
+
+    public function showProduct(){
+        return view('pages.product');
     }
 }
