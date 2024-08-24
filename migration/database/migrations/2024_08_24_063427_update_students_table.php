@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::table('students', function (Blueprint $table) {
             // $table->renameColumn('city','cities');
-            $table->dropColumn('percentage');
-            $table->string('city',100)->default('No city')->change();
+            // $table->dropColumn('percentage');
+            // $table->string('city',100)->default('No city')->change();
         });
     }
 
