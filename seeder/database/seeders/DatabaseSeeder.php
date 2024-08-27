@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+
+use App\Models\user as ModelsUser;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\user;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,5 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             StudentSeeder::class
         ]);
+
+        user::factory()->count(5)->create();
     }
 }
