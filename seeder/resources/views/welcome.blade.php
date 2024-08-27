@@ -1,0 +1,1 @@
+<h1>laravel seeder tutorial</h1>
