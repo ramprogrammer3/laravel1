@@ -1,0 +1,26 @@
+[
+    {
+        "name" : "ram kumar",
+        "email" : "ram@gmail.com",
+        "age" : 20,
+        "city" : "Noida"
+    },
+    {
+        "name" : "mohit kumar",
+        "email" : "mohit@gmail.com",
+        "age" : 30,
+        "city" : "Delhi"
+    },
+    {
+        "name" : "Sarita Kumari",
+        "email" : "Sarita@gmail.com",
+        "age" : 18,
+        "city" : "Pune"
+    },
+    {
+        "name" : "Pihu kumari",
+        "email" : "pihu@gmail.com",
+        "age" : 22,
+        "city" : "Goa"
+    }
+]
