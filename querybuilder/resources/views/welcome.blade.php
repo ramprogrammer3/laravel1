@@ -21,6 +21,7 @@
                             <th>Email</th>
                             <th>Age</th>
                             <th>City</th>
+                            <th>view</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,6 +32,7 @@
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->age}}</td>
                                 <td>{{$user->city}}</td>
+                                <td><a href="{{route('view.user',$user->id)}}" class="btn btn-primary btn-sm">View</a></td>
                             </tr>
                         @endforeach
                     </tbody>

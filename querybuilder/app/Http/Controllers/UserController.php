@@ -12,4 +12,9 @@ class UserController extends Controller
         // return $users;
         return view('welcome',['data' => $users]);
     }
+
+    public function singleUser(string $id){
+        $user = DB::table('users')->where('id', $id)->get();
+        return view('user',['data' => $user]);
+    }
 }
