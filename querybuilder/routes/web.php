@@ -10,3 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[UserController::class,'showUsers']);
 Route::get('/user/{id}',[UserController::class,'singleUser'])->name('view.user');
+
+Route::get('/add',[UserController::class,'addUser'])->name('add');
+
+Route::get('/update',[UserController::class,'updateUser']);

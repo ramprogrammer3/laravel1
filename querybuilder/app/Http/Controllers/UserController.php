@@ -17,4 +17,31 @@ class UserController extends Controller
         $user = DB::table('users')->where('id', $id)->get();
         return view('user',['data' => $user]);
     }
+
+    public function addUser(){
+        $user = DB::table('users')
+                    ->insert([
+                        'name' => "Ranjana kumari",
+                        "email" => "ranjana2342@gmail.com",
+                        "age" => 16,
+                        "city" => "Greater Noida",
+                        'created_at' => now(),
+                        'updated_at' => now()
+                    ]);
+
+        if($user){
+            echo "<h1> Data added successfully .  </h1>";
+        }            
+    }
+
+    public function updateUser(){
+        $user = DB::table('users')
+                    ->where('id',6)
+                    ->update([
+                        'name' => "Charuuu",
+                        "email" => "charu12@gmail.com"
+                    ]);
+
+        return $user;           
+    }
 }
