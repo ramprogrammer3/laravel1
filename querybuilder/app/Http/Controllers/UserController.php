@@ -44,4 +44,14 @@ class UserController extends Controller
 
         return $user;           
     }
+
+    public function deleteUser(string $id){
+        $user = DB::table('users')->where('id',$id)->delete();
+        
+        if($user){
+            echo "<h1>User delete successfully.</h1>";
+        }else{
+            echo "<h1>User not found.</h1>";
+        }
+    }
 }
