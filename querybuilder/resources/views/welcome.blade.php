@@ -13,6 +13,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>All Users</h1>
+                <a href="/newuser" class="btn btn-success btn-sm mb-3">Add New</a>
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
@@ -21,7 +22,9 @@
                             <th>Email</th>
                             <th>Age</th>
                             <th>City</th>
-                            <th>view</th>
+                            <th>View</th>
+                            <th>Delete</th>
+                            <th>Update</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,7 +35,15 @@
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->age}}</td>
                                 <td>{{$user->city}}</td>
-                                <td><a href="{{route('view.user',$user->id)}}" class="btn btn-primary btn-sm">View</a></td>
+                                <td>
+                                    <a href="{{route('view.user',$user->id)}}" class="btn btn-primary btn-sm">View</a>
+                                </td>
+                                <td>
+                                    <a href="{{route('view.delete',$user->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                                </td>
+                                <td>
+                                    <a href="{{route('update.page',$user->id)}}" class="btn btn-warning btn-sm">Update</a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

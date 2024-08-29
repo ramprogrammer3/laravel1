@@ -7,51 +7,74 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function showUsers(){
+    public function showUsers()
+    {
         $users = DB::table('users')->get();
-        // return $users;
-        return view('welcome',['data' => $users]);
+        return view('welcome', ['data' => $users]);
     }
 
-    public function singleUser(string $id){
-        $user = DB::table('users')->where('id', $id)->get();
-        return view('user',['data' => $user]);
+    public function singleUser(string $id)
+    {
+        $user = DB::table('users')->where('id',$id)->get();
+        return view('user', ['data' => $user]);
     }
 
-    public function addUser(){
+    public function addUser(Request $request)
+    {
         $user = DB::table('users')
-                    ->insert([
-                        'name' => "Ranjana kumari",
-                        "email" => "ranjana2342@gmail.com",
-                        "age" => 16,
-                        "city" => "Greater Noida",
-                        'created_at' => now(),
-                        'updated_at' => now()
-                    ]);
+            ->insert([
+                'name' => $request->name,
+                "email" => $request->email,
+                "age" => $request->age,
+                "city" => $request->city,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
 
-        if($user){
-            echo "<h1> Data added successfully .  </h1>";
-        }            
+        if ($user) {
+            return redirect()->route('home');
+        }
     }
 
-    public function updateUser(){
+    public function updatePage(string $id)
+    {
+        $user = DB::table('users')->find($id);
+        return view('updateuser', ['data' => $user]);
+    }
+
+    public function updateUser(Request $request, string $id)
+    {
         $user = DB::table('users')
-                    ->where('id',6)
-                    ->update([
-                        'name' => "Charuuu",
-                        "email" => "charu12@gmail.com"
-                    ]);
+            ->where('id', $id)
+            ->update([
+                'name' => $request->name,
+                "email" => $request->email,
+                'age' => $request->age,
+                'city' => $request->city
+            ]);
 
-        return $user;           
+        if ($user) {
+            return redirect()->route('home');
+        }
     }
 
-    public function deleteUser(string $id){
-        $user = DB::table('users')->where('id',$id)->delete();
-        
-        if($user){
-            echo "<h1>User delete successfully.</h1>";
-        }else{
+    public function deleteUser(string $id)
+    {
+        $user = DB::table('users')->where('id', $id)->delete();
+
+        if ($user) {
+            return redirect()->route('home');
+        } else {
             echo "<h1>User not found.</h1>";
+        }
+    }
+
+    public function deleteAllUser()
+    {
+        $user = DB::table('users')->truncate();
+
+        if ($user) {
+            echo "<h1>All User deleted successfully.</h1>";
         }
     }
 }
