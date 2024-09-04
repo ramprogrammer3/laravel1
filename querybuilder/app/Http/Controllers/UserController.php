@@ -12,8 +12,11 @@ class UserController extends Controller
         // $users = DB::table('users')->get();
         $users = DB::table('users')
                 // ->where('city', 'noida')    
-                ->orderBy('name')    
-                ->paginate(4);
+                // ->orderBy('name')    
+                ->paginate(3)
+                ->appends(['sort' => 'votes'])
+                ->fragment('ram');
+        // return $users;        
         return view('welcome', ['data' => $users]);
     }
 
