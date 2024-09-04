@@ -53,6 +53,11 @@
                 <div class="mt-5">
                     {{$data->links('pagination::bootstrap-4')}}
                 </div>
+                <div class="font-bold">
+                    Total users : 
+                    {{$data->total()}} <br> Current Page : 
+                    {{$data->currentPage()}} 
+                </div>
             </div>
         </div>
     </div>
