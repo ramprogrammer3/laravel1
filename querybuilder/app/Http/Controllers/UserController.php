@@ -10,7 +10,10 @@ class UserController extends Controller
     public function showUsers()
     {
         // $users = DB::table('users')->get();
-        $users = DB::table('users')->simplePaginate(4);
+        $users = DB::table('users')
+                // ->where('city', 'noida')    
+                ->orderBy('name')    
+                ->paginate(4);
         return view('welcome', ['data' => $users]);
     }
 
