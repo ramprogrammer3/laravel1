@@ -21,7 +21,8 @@
                             @csrf
                             <div class="mb-3">
                                 <label class="form-label">Name</label>
-                                <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                    name="name" value="{{ old('name') }}">
                                 <span class="text-danger">
                                     @error('name')
                                         {{ $message }}
@@ -30,7 +31,8 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Email</label>
-                                <input type="text" class="form-control" name="email" value="{{ old('email') }}">
+                                <input type="text" class="form-control @error('email') is-invalid @enderror"
+                                    name="email" value="{{ old('email') }}">
                                 <span class="text-danger">
                                     @error('email')
                                         {{ $message }}
@@ -39,7 +41,8 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Age</label>
-                                <input type="text" class="form-control" name="age" value="{{ old('age') }}">
+                                <input type="text" class="form-control @error('age') is-invalid @enderror"
+                                    name="age" value="{{ old('age') }}">
                                 <span class="text-danger">
                                     @error('age')
                                         {{ $message }}
@@ -47,12 +50,23 @@
                                 </span>
                             </div>
                             <div class="mb-3">
+                                <label class="form-label">Password</label>
+                                <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                    name="password" value="{{ old('password') }}">
+                                <span class="text-danger">
+                                    @error('password')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
+                            </div>
+                            <div class="mb-3">
                                 <label class="form-label">City</label>
-                                <select name="city" class="form-select">
+                                <select name="city" class="form-select @error('city') is-invalid @enderror">
                                     <option value="Noida">Noida</option>
                                     <option value="Delhi">Delhi</option>
                                     <option value="Mumbai">Mumbai</option>
                                     <option value="Pune">Pune</option>
+                                    <option value=""></option>
                                 </select>
                                 <span class="text-danger">
                                     @error('city')
