@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
+use App\Rules\Uppercase;
 
 class UserController extends Controller
 {
-    public function addUser(UserRequest $request)
+    public function addUser(Request $request)
     {
         // $request->validate(
         //     [
@@ -26,6 +27,11 @@ class UserController extends Controller
         //         'city.require' => "please enter city name"
         //     ]
         // );
+
+        $request->validate([
+            'name' => ['required', new Uppercase],
+            'email' => 'required | email'
+        ]);
         return $request->all();
     }
 }
