@@ -12,7 +12,18 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        // $users = User::all();
+        // $users = User::find([1,2,3,4,5],['name','email']);
+        // $users = User::count();
+        // $users = User::min('age');
+        // $users = User::max('age');
+        // $users = User::sum('age');
+        $users = User::where('city', 'Delhi')
+            ->where('age', '>', 20)
+            ->orWhere('city', 'Noida')
+            ->get();
+        // return $users;
+
         return view('welcome',compact('users'));
     }
 
