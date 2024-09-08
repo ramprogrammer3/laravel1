@@ -24,9 +24,19 @@
                                 <td> {{ $user->email }} </td>
                                 <td> {{ $user->age }} </td>
                                 <td> {{ $user->city }} </td>
-                                <td><a href="" class="btn btn-sm btn-primary">View</a></td>
-                                <td><a href="" class="btn btn-sm btn-danger">Delete</a></td>
-                                <td><a href="" class="btn btn-sm btn-warning">Update</a></td>
+                                <td>
+                                    <a href="{{ route('users.show', $user->id) }}" class="btn btn-sm btn-primary">View</a>
+                                </td>
+                                <td>
+                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-warning">Update</a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

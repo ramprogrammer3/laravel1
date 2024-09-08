@@ -55,7 +55,10 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        // $user = User::where('id', $user->id)->get();
+        $user = User::find($user->id);
+        return view('view',compact('user'));
+        
     }
 
     /**
@@ -63,22 +66,41 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        $user = User::find($user->id);
+        return view('update',compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'age' => 'required|numeric',
+            'city' => 'required|string'
+        ]);
+
+        $user = User::where('id',$id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'age' => $request->age,
+            'city' => $request->city
+        ]);
+
+        if($user){
+            return redirect()->route('users.index');
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(string $id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('users.index');
     }
 }
