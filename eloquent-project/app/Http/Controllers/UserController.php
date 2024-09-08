@@ -12,18 +12,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        // $users = User::all();
-        // $users = User::find([1,2,3,4,5],['name','email']);
-        // $users = User::count();
-        // $users = User::min('age');
-        // $users = User::max('age');
-        // $users = User::sum('age');
-        $users = User::where('city', 'Delhi')
-            ->where('age', '>', 20)
-            ->orWhere('city', 'Noida')
-            ->get();
-        // return $users;
-
+        $users = User::all();
         return view('welcome',compact('users'));
     }
 
@@ -32,7 +21,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('add');
     }
 
     /**
@@ -40,7 +29,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'age' => 'required|numeric',
+            'city' => 'required|string'
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'age' => $request->age,
+            'city' => $request->city
+        ]);
+
+        if($user){
+            return redirect()->route('users.index');
+        }
+
+        return $request->all();
     }
 
     /**
