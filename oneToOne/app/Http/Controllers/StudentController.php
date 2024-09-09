@@ -22,7 +22,22 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        $student = Student::create([
+            'name' => "ranjana",
+            'age' => 16,
+            "gender" => "F"
+        ]);
+
+        $student->contact()->create([
+            'email' => "ranjana@gmail.com",
+            'phone' => 4785963210,
+            'address' => "Greater Noida",
+            "city" => "Sitamarhi"
+        ]);
+
+        if($student){
+            echo "Data added successfully";
+        }
     }
 
     /**
